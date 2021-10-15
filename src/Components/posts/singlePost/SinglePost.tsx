@@ -4,8 +4,8 @@ import { SinglePostStyled } from './SinglePostStyled';
 const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
   return (
     <SinglePostStyled>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
+      <h2 className="single-post-title">{post.title}</h2>
+      <p className="single-post-text">{post.body}</p>
     </SinglePostStyled>
   );
 };

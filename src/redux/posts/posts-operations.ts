@@ -17,13 +17,21 @@ const getSinglePost = createAsyncThunk(
   }
 );
 
-const addPost = createAsyncThunk('posts/addPosts', async (postData) => {
-  const { data }: AxiosResponse<IPostItem> = await axios.post(
-    '/posts',
-    postData
-  );
-  return data;
-});
+interface IPostData {
+  title: string;
+  body: string;
+}
+
+const addPost = createAsyncThunk(
+  'posts/addPosts',
+  async (postData: IPostData) => {
+    const { data }: AxiosResponse<IPostItem> = await axios.post(
+      '/posts',
+      postData
+    );
+    return data;
+  }
+);
 
 const deletePost = createAsyncThunk('posts/deletePosts', async (id: number) => {
   try {
@@ -39,10 +47,7 @@ const updatePost = createAsyncThunk(
   async (postData: IPostItem) => {
     const { data }: AxiosResponse<IPostItem> = await axios.put(
       `/posts/${postData.id}`,
-      {
-        title: postData.title,
-        body: postData.body,
-      }
+      postData
     );
     return data;
   }

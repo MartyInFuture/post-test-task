@@ -1,5 +1,6 @@
 import React, { MouseEvent, useEffect } from 'react';
 import { ModalStyled } from './ModalStyled';
+import { Close } from '@material-ui/icons';
 
 type TBody = HTMLBodyElement;
 
@@ -39,7 +40,7 @@ const Modal: React.FC<IModalProps> = ({
               className="closeBtn"
               onClick={() => setIsOpenModal(false)}
             >
-              <span className="material-icons-outlined">close</span>
+              <Close />
             </button>
             <h2 className="nameForm">{modalTitle}</h2>
             {children}

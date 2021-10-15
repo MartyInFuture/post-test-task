@@ -7,10 +7,11 @@ import Button from '../../common/button/Button';
 import Modal from '../../common/modal/Modal';
 import { useState } from 'react';
 import { Delete, Edit } from '@material-ui/icons';
+import EditPostForm from '../editPost/EditPost';
 
 const PostsListItem: React.FC<PostsListItemProps> = ({ post }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [modalTitle, setModalTitle] = useState('');
+  const [modalTitle, setModalTitle] = useState('Title');
   const dispatch = useDispatch();
   const deletePost = () => {
     dispatch(postsOperations.deletePost(post.id));
@@ -43,7 +44,7 @@ const PostsListItem: React.FC<PostsListItemProps> = ({ post }) => {
         setIsOpenModal={setIsOpenModal}
         modalTitle={modalTitle}
       >
-        <p>hello</p>
+        <EditPostForm post={post} />
       </Modal>
     </PostsListItemStyled>
   );

@@ -8,23 +8,19 @@ export const ModalStyled = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .modal {
     border-radius: 4px;
-    width: 320px;
-    height: 50vh;
+    padding: 20px;
     position: relative;
-    top: 40%;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #ffffff;
     z-index: 999;
-    @media screen and (min-width: 768px) {
-      width: 500px;
-      height: 300px;
-    }
   }
   .nameForm {
-    padding-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     font-size: 26px;
     line-height: 1.22;
@@ -34,6 +30,7 @@ export const ModalStyled = styled.div`
     }
   }
   .closeBtn {
+    cursor: pointer;
     border: 0;
     background-color: transparent;
     display: block;

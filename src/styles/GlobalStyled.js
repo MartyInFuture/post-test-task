@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-body{
-  background-color: grey;
-}
 ul{
   list-style: none;
   padding: 0;
@@ -17,6 +14,10 @@ button{
 a{
   text-decoration: none;
   color: inherit
+}
+
+textarea{
+  resize: none;
 }
 
 p,h1, h2, h3, h4, h5, h6{

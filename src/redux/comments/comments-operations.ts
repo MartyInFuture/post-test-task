@@ -7,9 +7,14 @@ const getComments = createAsyncThunk('comments/getComments', async () => {
   return data;
 });
 
+interface ICommentData {
+  postId: number;
+  body: string;
+}
+
 const addComment = createAsyncThunk(
   'comments/addComments',
-  async (commentData) => {
+  async (commentData: ICommentData) => {
     const { data }: AxiosResponse<ICommentItem> = await axios.post(
       '/comments',
       commentData
