@@ -12,4 +12,4 @@
 - Clone repository
 - run 'npm install'
 - run 'npm start'
-- Or just go to page: [TEXT TO SHOW](marty-post-test-task.netlify.app/)
+- Or just go to page: [TEXT TO SHOW](https://marty-post-test-task.netlify.app/)
