@@ -18,7 +18,7 @@ const SinglePostPage = () => {
 
   useEffect(() => {
     dispatch(postsOperations.getSinglePost(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const addComment = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

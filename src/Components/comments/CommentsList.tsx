@@ -18,7 +18,7 @@ const CommentsList = () => {
     setFilteredComments(
       comments.filter((item) => Number(item.postId) === Number(id))
     );
-  }, [comments]);
+  }, [comments, id]);
   return (
     <>
       {filteredComments.length ? (

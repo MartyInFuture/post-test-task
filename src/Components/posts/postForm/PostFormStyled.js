@@ -17,8 +17,9 @@ export const PostFormStyled = styled.form`
       margin-bottom: 5px;
     }
   }
-  .button-wrapper {
+  .post-button-wrapper {
     display: flex;
+    width: 100%;
     justify-content: space-between;
   }
 `;

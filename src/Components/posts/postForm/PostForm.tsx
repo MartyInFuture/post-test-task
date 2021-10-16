@@ -39,7 +39,7 @@ const PostForm: React.FC<PostFormProps> = ({
         onKeyDown={onEnterPress}
         required
       />
-      <div className="button-wrapper">
+      <div className="post-button-wrapper">
         <Button
           onHandleClick={closeModal}
           text="Decline"

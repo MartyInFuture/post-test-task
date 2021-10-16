@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import commentsOperations from './comments-operations';
 import { ICommentItem } from './comments-interfaces';
 
