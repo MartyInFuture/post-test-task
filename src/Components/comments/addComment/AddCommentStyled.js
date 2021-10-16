@@ -8,4 +8,13 @@ export const AddCommentStyled = styled.form`
     margin-bottom: 10px;
     font-size: 20px;
   }
+
+  .button-wrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
 `;

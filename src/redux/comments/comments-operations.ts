@@ -41,7 +41,7 @@ const updateComment = createAsyncThunk(
     const { data }: AxiosResponse<ICommentItem> = await axios.put(
       `/comments/${commentData.id}`,
       {
-        title: commentData.postId,
+        postId: commentData.postId,
         body: commentData.body,
       }
     );

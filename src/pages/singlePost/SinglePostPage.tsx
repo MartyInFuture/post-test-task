@@ -7,6 +7,8 @@ import CommentsList from '../../Components/comments/CommentsList';
 import { SinglePostPageStyled } from './SinglePostPageStyled';
 import { commentsOperations } from '../../redux/comments';
 import AddComment from '../../Components/comments/addComment/AddComment';
+import { Link } from 'react-router-dom';
+import { ArrowBack } from '@material-ui/icons';
 
 const SinglePostPage = () => {
   const post = useSelector(postsSelectors.getPosts);
@@ -33,6 +35,10 @@ const SinglePostPage = () => {
 
   return (
     <SinglePostPageStyled>
+      <Link className="back-arrow" to="/">
+        <ArrowBack />
+        BACK
+      </Link>
       {post.length ? (
         <>
           <SinglePost post={post[0]} />

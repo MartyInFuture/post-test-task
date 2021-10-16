@@ -10,7 +10,11 @@ export const CommentsListItemStyled = styled.li`
     margin-bottom: 5px;
   }
   .button-wrapper {
-    width: 100px;
+    display: flex;
+    justify-content: space-between;
     margin-left: auto;
+    @media screen and (min-width: 768px) {
+      width: 200px;
+    }
   }
 `;

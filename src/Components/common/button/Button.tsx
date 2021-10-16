@@ -5,12 +5,14 @@ const Button: React.FC<ButtonProps> = ({
   text,
   icon,
   buttonColor,
+  type = 'button',
 }) => {
   return (
     <ButtonStyled>
       <button
         onClick={() => onHandleClick()}
         className={`button ${buttonColor}`}
+        type={type}
       >
         {text}
         {icon}
@@ -26,4 +28,5 @@ interface ButtonProps {
   text: string;
   icon: JSX.Element | null;
   buttonColor: string;
+  type?: 'button' | 'submit' | 'reset';
 }

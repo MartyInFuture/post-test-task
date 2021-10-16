@@ -1,10 +1,8 @@
-import { PostFormStyled } from './PostFormStyled';
+import { CommentFormStyled } from './CommentFormStyled';
 import Button from '../../common/button/Button';
 import { Add, Close } from '@material-ui/icons';
 
-const PostForm: React.FC<PostFormProps> = ({
-  title,
-  onTitleChange,
+const CommentForm: React.FC<EditCommentProps> = ({
   body,
   onBodyChange,
   onHandleSubmit,
@@ -16,29 +14,21 @@ const PostForm: React.FC<PostFormProps> = ({
         bubbles: true,
         cancelable: true,
       });
-      document.querySelector('#post-form')?.dispatchEvent(event);
+      document.querySelector('#comment-form')?.dispatchEvent(event);
     }
   };
-
   const closeModal = () => {
     setIsOpenModal(false);
   };
   return (
-    <PostFormStyled id="post-form" onSubmit={onHandleSubmit}>
-      <input
-        type="text"
-        value={title}
-        className="edit-post-form-input"
-        onChange={onTitleChange}
-        required
-      />
+    <CommentFormStyled id="comment-form" onSubmit={onHandleSubmit}>
       <textarea
+        className="edit-comment-form-input"
         value={body}
-        className="edit-post-form-input"
         onChange={onBodyChange}
         onKeyDown={onEnterPress}
         required
-      />
+      ></textarea>
       <div className="button-wrapper">
         <Button
           onHandleClick={closeModal}
@@ -54,15 +44,13 @@ const PostForm: React.FC<PostFormProps> = ({
           buttonColor="add-access"
         />
       </div>
-    </PostFormStyled>
+    </CommentFormStyled>
   );
 };
 
-export default PostForm;
+export default CommentForm;
 
-interface PostFormProps {
-  title: string;
-  onTitleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+interface EditCommentProps {
   body: string;
   onHandleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   onBodyChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;

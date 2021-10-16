@@ -11,12 +11,11 @@ import EditPostForm from '../editPost/EditPost';
 
 const PostsListItem: React.FC<PostsListItemProps> = ({ post }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Title');
   const dispatch = useDispatch();
   const deletePost = () => {
     dispatch(postsOperations.deletePost(post.id));
   };
-  const editTitle = () => {
+  const editPOst = () => {
     setIsOpenModal(true);
   };
   return (
@@ -27,7 +26,7 @@ const PostsListItem: React.FC<PostsListItemProps> = ({ post }) => {
       </Link>
       <div className="post-actions">
         <Button
-          onHandleClick={editTitle}
+          onHandleClick={editPOst}
           text="Edit"
           icon={<Edit />}
           buttonColor="edit-warning"
@@ -42,9 +41,9 @@ const PostsListItem: React.FC<PostsListItemProps> = ({ post }) => {
       <Modal
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
-        modalTitle={modalTitle}
+        modalTitle="Edit Post"
       >
-        <EditPostForm post={post} />
+        <EditPostForm post={post} setIsOpenModal={setIsOpenModal} />
       </Modal>
     </PostsListItemStyled>
   );

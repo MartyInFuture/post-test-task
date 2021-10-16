@@ -61,6 +61,7 @@ const PostsPage = () => {
           body={body}
           onBodyChange={onBodyChange}
           onHandleSubmit={addPost}
+          setIsOpenModal={setIsOpenModal}
         />
       </Modal>
     </PostPageStyled>

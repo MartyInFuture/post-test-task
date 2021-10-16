@@ -7,6 +7,7 @@ export const ButtonStyled = styled.div`
     display: flex;
     align-items: center;
     padding: 4px 12px;
+    cursor: pointer;
 
     &:focus,
     &:hover {

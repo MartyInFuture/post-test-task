@@ -1,4 +1,6 @@
 import { AddCommentStyled } from './AddCommentStyled';
+import Button from '../../common/button/Button';
+import { Add } from '@material-ui/icons';
 
 const AddComment: React.FC<AddCommentProps> = ({
   onHandleSubmit,
@@ -18,6 +20,15 @@ const AddComment: React.FC<AddCommentProps> = ({
         onChange={onBodyChange}
         required
       />
+      <div className="button-wrapper">
+        <Button
+          onHandleClick={() => {}}
+          text="Add"
+          type="submit"
+          icon={<Add />}
+          buttonColor="add-access"
+        />
+      </div>
     </AddCommentStyled>
   );
 };
